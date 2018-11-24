@@ -1,0 +1,23 @@
+4) microsoft sql server 2008 management studio express
+====================================================
+
+https://www.microsoft.com/en-in/download/details.aspx?id=7593
+
+5) microsoft sql server 2008 express
+==================================
+
+https://www.microsoft.com/en-in/download/details.aspx?id=1695
+
+
+
+note:(need)
+=====
+1) microsoft  .net framework 3.5sp1
+===================================
+https://www.microsoft.com/en-us/download/confirmation.aspx?id=22
+
+2) windows installer 4.5
+==============================
+https://www.microsoft.com/en-us/download/confirmation.aspx?id=8483
+
+
