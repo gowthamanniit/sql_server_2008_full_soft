@@ -1,0 +1,13 @@
+
+  
+select * from HumanResources.EmployeePayHistory
+  
+select EmployeeID,Rate, ROW_NUMBER() over(order by Rate Desc) as ttt  from HumanResources.EmployeePayHistory
+select EmployeeID,Rate,RANK() over(order by Rate Desc) as ttt  from HumanResources.EmployeePayHistory
+select EmployeeID,Rate, dense_rank() over(order by Rate Desc) as ttt  from HumanResources.EmployeePayHistory
+  
+select SalespersonID,TerritoryID,SalesYTD, DENSE_RANK() over(partition by TerritoryID order by SalesYTD desc) as RaNK from Sales.SalesPerson where TerritoryID is not null
+select SalespersonID,TerritoryID,SalesYTD from Sales.SalesPerson
+
+select EmployeeID,BirthDate,HireDate, NTILE(10) over(order by BirthDate) as Rank From HumanResources.Employee
+select salespersonID,territoryid,salesYTD,DENSE_RANK()over(partition by territoryid order by salesYTD desc) as rank from Sales.salesperson 
