@@ -1,0 +1,6 @@
+--create table chicken(name varchar(25),kilogram int,price int)
+--create table fish(name varchar(25),kilogram int,price int)
+--insert into chicken values('eggchick',75,10000)
+select * from chicken
+select * from fish
+select c.name,c.kilogram,f.name,f.kilogram,c.price+f.price as 'total price' from chicken c cross join fish f
