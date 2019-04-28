@@ -1,0 +1,6 @@
+--// user defined datatype
+
+--create type mydatatype from varchar(20) not null;
+--create table test2(name mydatatype)
+insert into test2 values('gowtham')
+select * from test2
