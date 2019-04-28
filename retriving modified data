@@ -1,0 +1,18 @@
+-- retrieving the modified data
+-- without using select query we can see affected(inserted,deleted,updated) rows.
+/*
+insert stu19
+output inserted.*
+values(34,'455',555)
+
+update stu19 set sname='thatsayiny' 
+output inserted.sname
+where sid=555
+
+delete stu19
+output deleted.*
+where sid=22
+
+*/
+select * from stu19
+
