@@ -1,0 +1,12 @@
+--create table stu19 (sno int,sname varchar(20))
+--insert stu19 values(1114,'raju',78)
+--select * from stu19
+--delete stu19 where sno=1112
+--=========================================================
+--Here it deletes only the values like truncate
+
+--delete stu19
+
+-- or
+--truncate table stu19 
+--=========================================================
