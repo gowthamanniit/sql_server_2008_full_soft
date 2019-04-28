@@ -1,0 +1,10 @@
+--alter table mytable add mark int
+--update mytable set name='bbb' where mark=46
+--insert into mytable values(6,'gowthaman',55)
+select * from mytable
+--select name,mark=sum(mark)  from mytable group by (name)
+--select name,mark=sum(mark)  from mytable group by rollup(name)
+--select name,mark=sum(mark)  from mytable group by cube(name)
+--select name,mark=sum(mark)  from mytable where mark>=60 group by rollup(name)
+--select name,mark=sum(mark)  from mytable group by rollup(name,mark)
+select name,mark=count(mark)  from mytable group by cube(name,mark)
