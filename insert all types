@@ -1,0 +1,67 @@
+-- DML 
+-=================================================================
+--1) storing data(insert)
+
+--create table emp(emid int,ename varchar(25),address varchar(30),salary int)
+--insert emp values(101,'raja','east',5400)
+--insert emp (ename,emid,address,salary) values('gowtham',102,'pothanur',15000)
+--insert emp (ename,emid,address,salary) values('gowtham',102,'pothanur',15000),('sri',103,'jedarpalayam',45000)
+
+--2) partial data store (insert)
+--insert emp (emid,ename,address)values(106,'itra','south')
+--============================================================
+--3) storing or inserting data in related tables
+
+--create table temp(emid int,ename varchar(25),address varchar(30),salary int)
+--select * from emp
+--select * from temp
+--insert into temp select * from emp where salary>10000
+--insert temp select * from emp where salary<10000
+--select * from temp
+--======================================================
+--4) inserting data in an identity column
+
+--identity  one of the datatype
+
+--create table emp5 (empid int not null identity(1,1),empname varchar(29))
+
+--insert into emp5 values('gowthaman')  -- error if not given identity data type
+--insert into emp5 values('thaman')
+--insert into emp5 values('man')
+
+
+--set identity_insert emp5 ON  -- default OFF
+							 -- ON - not insert,it shows error
+							 -- OFF - insert identiy column data type 1,2,3,4,5,.	
+								
+--set identity_insert emp5 OFF
+--insert into emp5 values ('karur')
+--select * from emp5
+
+--============================================================================
+-- 5) inserting filestream data
+
+--create table myemp(empid int ,ephoto varbinary(max))
+--alter table myemp add eid1 uniqueidentifier
+--alter table myemp drop column empid,eid
+--insert into myemp (empid,ephoto)values(101,cast('d:\photo\k.jpg' as varbinary(max)))
+--insert into myemp (eid1,ephoto)values(NEWID(),cast('d:\photo\k.jpg' as varbinary(max)))
+--select * from myemp
+
+--==================================================================
+--6) inserting globally unique values
+
+-- NEWSEQUETIALID() --> GLOBALLY GENERATE UNIQUE VALUE (default constraint must)
+				    --> sequential number 
+-- MENTION DATATYPE UNIQUEIDENTIFIER 
+
+--CREATE TABLE emp6 (empid int,empname varchar(20),key1 uniqueidentifier default(NEWSEQUENTIALID()))
+--INSErt into emp6 (empid,empname) values(14,'raja')
+--select * from emp6
+
+-- select NEWID()  -- work
+-- select NEWSEQUENTIALID() --> not work only default constraint
+
+
+
+
