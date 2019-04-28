@@ -1,0 +1,26 @@
+--Rule
+--====
+-- syntax:
+-- create rule rulename as @colname in or between or like(,,)
+--create rule notz as @name like '[a-y]%'
+
+-- bind rule
+--sp_bindrule notz,'Test1.name'
+
+--insert into Test1 values(44,'zoom')  // not insert or update
+--select * from Test1
+
+--un bind rule
+--sp_unbindrule 'Test1.name'
+--insert into Test1 values(44,'zoom')  --  insert or update
+--select * from Test1
+
+--drop rule
+--drop rule notz
+--select * from Test1
+--truncate table Test1
+
+
+
+
+
