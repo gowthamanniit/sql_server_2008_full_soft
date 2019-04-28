@@ -1,0 +1,13 @@
+
+select * from HumanResources.EmployeeAddress
+select * from Person.Address
+
+select * from HumanResources.EmployeeAddress where AddressID in (1,2,3,4)
+
+select employeeID,AddressID from HumanResources.EmployeeAddress  where AddressID
+in
+(select addressid from Person.Address where City='Bothell') order by AddressID
+
+
+select * from HumanResources.EmployeeAddress where AddressID not in (1,2,3,4)
+
