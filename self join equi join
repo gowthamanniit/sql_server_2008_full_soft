@@ -1,0 +1,31 @@
+
+/*
+equi join --> combine multiple tables
+
+
+*/
+--select * from HumanResources.Employee
+--select * from HumanResources.Department
+--select * from HumanResources.EmployeeDepartmentHistory
+
+--select * from HumanResources.EmployeeDepartmentHistory d join HumanResources.Employee e on d.EmployeeID=e.EmployeeID JOIN HumanResources.Department P ON P.DepartmentID = d.DepartmentID where d.EmployeeID=168
+
+
+-- self join start here
+
+
+--update HumanResources.Employee set ManagerID=null where EmployeeID=7
+--select * from HumanResources.Employee WHERE ManagerID is null
+
+--select emp.EmployeeID, emp.Title,emp.ManagerID,mgr.Title from HumanResources.Employee emp , HumanResources.Employee mgr where emp.ManagerID=mgr.EmployeeID order by EmployeeID
+
+
+--create table eph(eid int primary key, did int)
+--insert into eph values(105,2)
+--select * from eph
+
+--create table dept(did int,deptname varchar(20),eid int foreign key references eph(eid)) 
+--insert into dept values(2,'sales',101)
+--select * from dept
+
+--select * from eph d1 join dept d2 on d1.eid=d2.eid order by d1.eid
