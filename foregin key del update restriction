@@ -1,0 +1,51 @@
+-- constraint foregin key with delete update restriction clause.
+--create database fkdelup
+--use fkdelup
+--create table one(eid int primary key)
+--insert into one values(106)
+--select * from one
+
+--drop table one
+
+--create table two(eid int foreign key references one(eid)) 
+--insert into two values(102)
+--select * from two
+--drop table two
+
+--delete from one where eid=101  -- cannot delete because both  table avaible eid 101 
+--delete from one where eid=103  -- delete 103 because not available in two table.
+
+--create table three(eid int foreign key references one(eid) on delete no action on update no action)
+--select * from one
+--insert into three values(105)
+--select * from three
+--delete from one where eid=102
+
+--drop table three
+
+--create table three(eid int foreign key references one(eid) on delete cascade on update cascade)
+--delete from one where eid=101
+--select * from one
+--insert into three values(104)
+--select * from three
+
+
+
+--drop table three
+--create table three(eid int foreign key references one(eid) on delete set null on update set null)
+--delete from one where eid=102
+--select * from one
+--insert into three values(106)
+--select * from three
+
+
+
+--drop table three
+--create table three(eid int foreign key references one(eid) on delete set default on update set default, ename varchar(20))
+delete from one where eid=101
+--select * from one
+--insert into one values(103)
+--insert into three (eid, ename)values(103,'gowthaman')
+select * from three
+
+--drop table three
