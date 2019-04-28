@@ -1,0 +1,58 @@
+--create database constraintg
+--use constraintg
+
+-- 1) primary key (duplicate not allow,null not accept)
+
+--create table emp1(empid int primary key)
+--insert into emp1 (empid) values(null)
+--select * from emp1
+--another way to declare primary key
+--create table emp2 (empid int,ename varchar(20),constraint c1 primary key(empid))
+--insert into emp2 values(1002,'gowthaman')
+--select * from emp2
+
+-- 2) unique key(duplicate not allow, null allow only one time)
+
+--create table emp3(empid int unique)
+--insert into emp3 values(null)
+--select * from emp3
+
+--3) not null (duplication allow,null not accept)
+
+--create table emp4 (empid int not null)
+--insert into emp4 values(null)
+--select * from emp4
+
+--4) foreign key (duplicate allow,null allow one or more time)
+-- but only refer base table(emp1) field values(empid).
+-- do not assign foreign key when base table field(column) does not contain primary key
+
+--select * from emp1
+--create table emp5(empid int foreign key references emp1(empid),ename varchar(20)) 
+--insert into emp5 values(1111,'ramua')
+--select * from emp5
+
+-- another way to declare foreign key
+
+--create table emp6(empid int,ename varchar(20),constraint fk foreign key(empid) references emp1(empid))
+--insert into emp6 values(1113,'gowthaman')
+--select * from emp
+
+--create table emp7(empid int,ename varchar(20),constraint fk3 foreign key(empid) references emp1(empid) on delete no action on update no action)
+
+--insert into emp7 values(1112,'g')
+--delete from emp7 where empid=1111
+--delete from emp1 where empid=1111
+--update emp1 set empid=1001 where empid=1111
+--select * from emp7
+
+-- default  : set to default values
+--create table emp8(empid int,eplace varchar(20) default 'karur')
+--insert into emp8 (empid) values(1113)
+--select * from emp8
+
+--check : accept to insert values when condition is statisfied
+
+--create table emp9(empid int,ename varchar(20),age int,constraint cc check (age>18))
+insert into emp9 values(1111,'thatsayiny',19)
+select * from emp9
