@@ -1,0 +1,9 @@
+select * from HumanResources.Employee where VacationHours=49
+
+
+
+select employeeid,title,VacationHours from HumanResources.Employee
+where VacationHours =any (select VacationHours from HumanResources.Employee where Title='Recruiter')
+
+select employeeid,VacationHours from HumanResources.Employee where Title='Recruiter'
+
