@@ -1,0 +1,20 @@
+--select ABS(-45)
+--select CEILING(12.001)
+--select FLOOR(12.99)
+--select EXP(0)
+--select LOG(10.3)
+--select LOG10(10)
+--select PI()
+--select POWER(2,5)
+--select RADIANS(57.5)
+--select RAND()
+--select round(RAND()*100,2)
+--select ROUND(-435,-2)
+--select SIGN(10)
+--select SQRT(64)
+/* logical function
+choose
+iff
+*/
+--select choose(3,'a','b','c','d')
+--select iff(23>3,'true','false')
