@@ -1,0 +1,23 @@
+--create table psales(sagent varchar(20),scountry varchar(20), samount int)
+--insert into psales values('gowthaman','uk',100)
+--select * from psales
+
+select sagent,india,us,uk from psales
+pivot
+(
+ sum(samount)
+ for scountry in(india,us,uk)
+)as mypvt
+
+-----------------------------------unpivot-----------------------
+--create table ups(sagent varchar(20), india int,us int,uk int)
+--insert into ups values('gowthaman',200,300,600)
+--insert into ups values('karthi',100,200,300)
+select * from ups
+
+select sagent,scountry,samount from ups
+unpivot
+(
+samount
+for scountry in(india,us,uk)
+)as unpvt
