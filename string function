@@ -1,0 +1,26 @@
+--select 'karur '+Name from HumanResources.Department
+
+--select ASCII('0')
+--select CHAR(65)
+--select CHARINDEX('tha','gowthaman')
+--select CHARINDEX('a','gowthaman')
+--select DIFFERENCE('gowtham','gowtham')
+--select LEFT('richard',4)
+--select RIGHT('richard',4)
+--select LEN('richard')
+
+--select LOWER('GOWTHaman')
+--select UPPER('gowthAMAN')
+--select len(LTRIM('   gowthaman'))
+--select RTRIM('    k.gowthmana     ')
+--select len(LTRIM(rtrim('    dsfsd     ')))
+--select REPLACE('university','ity','e')
+--select REPLACE('raja','a','o')
+--select REPLICATE('gowthaman',5)
+--select REVERSE('madam')
+--select 'gowthaman'+SPACE(13)+'k'
+--select STUFF('raja',3,2,'ni')
+--select 'gowtha'+'man'
+--select SUBSTRING('gowthaman',4,4)
+--select PATINDEX('%man','gowthaman')
+select concat('yyy','hjh')
