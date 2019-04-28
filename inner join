@@ -1,0 +1,14 @@
+--select * from Purchasing.PurchaseOrderHeader
+--select Purchaseorderid,employeeid,vendorid from Purchasing.PurchaseOrderHeader where EmployeeID=233
+--create table movies(mid int,mname varchar(25), ymad int)
+--create table actor(mid int,fname varchar(25), lname varchar(25))
+--insert into movies values(4,'david',2010)
+--insert into actor values(4,'jeeva','j')
+
+--select * from movies
+--select * from actor
+--select m.mid,m.mname,m.ymad,a.fname,a.lname from movies m join actor a on m.mid =a.mid
+--select m.mid,m.mname,m.ymad,a.fname,a.lname from movies m inner join actor a on m.mid =a.mid
+--select m.mid,m.mname,m.ymad,a.fname,a.lname from movies m left outer join actor a on m.mid =a.mid
+--select m.mid,m.mname,m.ymad,a.mid,a.fname,a.lname from movies m right outer join actor a on m.mid =a.mid
+--select m.mid,m.mname,m.ymad,a.mid,a.fname,a.lname from movies m full outer join actor a on m.mid =a.mid
