@@ -1,0 +1,7 @@
+--select * from HumanResources.EmployeePayHistory
+--select 'unique rate='=COUNT(distinct rate) from HumanResources.EmployeePayHistory
+--select COUNT(distinct rate) 'column name' from HumanResources.EmployeePayHistory
+--create table mytable(sno int,name varchar(29))
+--insert into mytable values(5,'gowthaman')
+select * from mytable
+select COUNT(*) from mytable
