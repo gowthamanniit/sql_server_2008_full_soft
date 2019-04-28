@@ -1,0 +1,15 @@
+-- enabling disabling constraint
+--==============================
+--create table Test1(Rate int,name varchar(20),constraint cn check (Rate>18))
+--insert into Test1 values(1,'ccccc')
+--select * from Test1
+-- disabling constraint
+--=======================
+--alter table Test1 nocheck constraint cn
+--insert into Test1 values(1,'ccccc')
+-- enabling constraint
+--=====================
+--alter table Test1 check constraint cn
+--insert into Test1 values(19,'ddd')
+--insert into Test1 values(17,'eee')
+--select * from Test1
