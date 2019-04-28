@@ -1,0 +1,27 @@
+/*
+ResultSet:
+  Combine or Compare tables.
+  
+  *) UNION
+  *) UNION ALL
+  *) INTERSECT
+  *) EXCEPT
+*/
+sp_help borrower
+
+select * from INFORMATION_SCHEMA.TABLES
+select * from depositor
+union all
+select * from borrower
+select customername from depositor
+union --all
+select customername from borrower
+
+select customername from depositor
+intersect
+select customername from borrower
+
+
+select customername from depositor
+except
+select customername from borrower
