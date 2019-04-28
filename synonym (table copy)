@@ -1,0 +1,13 @@
+-- synonym
+-- def : table copy
+-- you can update both table.then changes will affect both.
+-- cannot alter synonym
+-- but we can use select,insert,update,delete,exec
+CREATE SYNONYM GOW2 FOR test2
+select * from test2
+select * from gow2
+
+update test2 set name='gggg'
+update gow2 set name='ccccc'
+
+-- drop synonym gow2
