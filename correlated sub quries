@@ -1,0 +1,23 @@
+/* correlated subquerries
+
+
+select AVG(vacationhours) from HumanResources.Employee 
+select EmployeeID,VacationHours,title from HumanResources.Employee where VacationHours>50
+
+select employeeid from HumanResources.Employee e1 
+where VacationHours>
+(select AVG(vacationhours) from HumanResources.Employee e2 where 
+Title=Title) order by EmployeeID
+
+---------------------------------------------------------------------------
+cross apply
+
+--create table borrower(customername varchar(20),loannum int)
+--insert into borrower values('jenne',308)
+--select * from borrower
+--select * from depositor
+--select d.customername,d.accnum,br.loannum from depositor d cross apply (select * from borrower b where d.customername = b.customername)br
+
+outer apply
+
+--select d.customername,d.accnum,br.loannum from depositor d outer apply (select * from borrower b where d.customername = b.customername)br
