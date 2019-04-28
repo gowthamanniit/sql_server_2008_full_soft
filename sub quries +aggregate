@@ -1,0 +1,8 @@
+--select employeeid,VacationHours from HumanResources.Employee where VacationHours>(select avg(vacationhours) from HumanResources.Employee where Title='marketing assistant')
+
+
+select departmentid from HumanResources.EmployeeDepartmentHistory where EmployeeID=
+(select employeeid from HumanResources.Employee where ContactID=(
+select contactid from Person.Contact where EmailAddress='taylor0@adventure-works.com'))
+
+
