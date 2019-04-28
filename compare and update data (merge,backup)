@@ -1,0 +1,25 @@
+-- comparing and updating data
+
+--create table education(empcode int,education varchar(20))
+--insert education values(4,'mca')
+--select * from education
+
+-- backup education table
+--select * into education_backup from education
+
+--delete + insert new value to original table
+
+--delete education where empcode=4 
+--insert education values (5,'B.Tech')
+select * from education_backup
+select * from education
+
+merge education_backup as target
+using education as source
+on (target.empcode = source.empcode)
+when matched and target.education <> source.education
+then update set target.education =source.education
+when not matched then 
+insert values (source.empcode,source.education)
+when not matched by source then
+delete;
