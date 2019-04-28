@@ -1,0 +1,64 @@
+/*
+create table EmployeeHierarchy(
+hnode hierarchyid primary key,
+hlevel as hnode.GetLevel(),
+empid int unique not null,
+ename varchar(20) not null,
+desig varchar(20) null)
+*/
+--insert into employeehierarchy (hnode,empid,ename,desig) values (hierarchyid::GetRoot(),101,'sam','ceo')
+
+select hnode.ToString() gg,hnode,hlevel,empid,ename,desig from employeehierarchy
+
+/*
+declare @ceo hierarchyid
+select @ceo = CAST('/' as hierarchyid)
+from employeehierarchy
+insert into employeehierarchy(hnode,empid,ename,desig) values(@ceo.GetDescendant(null,null),102,'sandy','manager')
+*/
+
+/*
+declare @ceo hierarchyid
+select @ceo = CAST('/' as hierarchyid)
+from employeehierarchy
+declare @firstchild hierarchyid
+select @firstchild = CAST('/1/' as hierarchyid)
+from employeehierarchy
+insert employeehierarchy (hnode,empid,ename,desig)values(@ceo.GetDescendant(@firstchild,null),103,'jack','manager')
+*/
+
+/*
+declare @parent hierarchyid
+select @parent = CAST('/1/' as hierarchyid)
+from employeehierarchy
+insert into employeehierarchy (hnode,empid,ename,desig) values (@parent.GetDescendant(null,null),104,'mary','teamleader')
+*/
+
+/* 
+declare @parent hierarchyid
+select @parent = CAST('/1/' as hierarchyid)
+from employeehierarchy
+declare @firstchild hierarchyid
+select @firstchild =CAST('/1/1/' as hierarchyid)
+from employeehierarchy
+insert into employeehierarchy(hnode,empid,ename,desig) values(@parent.GetDescendant(@firstchild,null),105,'jancy','teamleader')
+*/
+
+/*
+declare @parent2 hierarchyid
+select @parent2=CAST('/2/' as hierarchyid)
+from employeehierarchy
+insert into employeehierarchy(hnode,empid,ename,desig) values(@parent2.GetDescendant(null,null),106,'sandra','teamleader')
+*/
+
+
+
+/*
+declare @parent2 hierarchyid
+select @parent2=CAST('/2/' as hierarchyid)
+from employeehierarchy
+declare @firstchild hierarchyid
+select @firstchild=CAST('/2/1/' as hierarchyid)
+from employeehierarchy
+insert into employeehierarchy(hnode,empid,ename,desig) values(@parent2.GetDescendant(@firstchild,null),107,'luci','teamleader')
+*/
